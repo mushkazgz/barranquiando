@@ -1,0 +1,21 @@
+<!-- web/templates/barranco_detalle.html -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ barranco.nombre }} - Barranquiando</title>
+</head>
+<body>
+    <header>
+        <h1>{{ barranco.nombre }}</h1>
+    </header>
+    <div class="container">
+        <p><strong>Descripción:</strong> {{ barranco.descripcion }}</p>
+        <p><strong>Dificultad:</strong> {{ barranco.dificultad }}</p>
+        <!-- Añadir más detalles del barranco según sea necesario -->
+    </div>
+    <a href="/">Volver a la lista de barrancos</a>
+</body>
+</html>

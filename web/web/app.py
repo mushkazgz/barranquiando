@@ -1,24 +1,25 @@
-from flask import Flask, render_template
+# web/app.py
+
+from flask import Flask, render_template, abort
+from mongoengine import connect
+from models.barranco import Barranco
 
 app = Flask(__name__)
 
+connect(db='barranquiando_db', host='localhost', port=27017)
+
 @app.route('/')
 def home():
-    return render_template('home.html')
+    barrancos = Barranco.objects()
+    return render_template('home.html', barrancos=barrancos)
 
-@app.route('/barrancos/gorgas-de-fuentes-callejas')
-def gorgas_de_fuentes_callejas():
-    return render_template('barranco_gorgas_de_fuentes_callejas.html')
-
-@app.route('/barrancos/barranco-de-sierra-helada')
-def barranco_de_sierra_helada():
-    return render_template('barranco_sierra_helada.html')
-
-@app.route('/barrancos/barranco-de-orbisa')
-def barranco_de_orbisa():
-    return render_template('barranco_orbisa.html')
-
-# Otras rutas aquí...
+@app.route('/barrancos/<nombre>')
+def barranco_detalle(nombre):
+    # Usar first() para obtener el primer resultado o None si no existe
+    barranco = Barranco.objects(nombre=nombre).first()
+    if barranco is None:
+        abort(404)  # Lanzar un error 404 si no se encuentra el barranco
+    return render_template('barranco_detalle.html', barranco=barranco)
 
 if __name__ == '__main__':
     app.run(debug=True)

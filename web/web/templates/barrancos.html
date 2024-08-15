@@ -1,0 +1,63 @@
+<!-- web/templates/barrancos.html -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barrancos - Barranquiando</title>
+</head>
+<body>
+    <header>
+        <h1>Lista de Barrancos</h1>
+    </header>
+    <div class="container">
+        <ul>
+            {% for barranco in barrancos %}
+                <li>
+                    <h2>{{ barranco.nombre }}</h2>
+                    <p><strong>Descripción:</strong> {{ barranco.descripcion }}</p>
+                    <p><strong>Periodo de descenso:</strong> {{ barranco.periodo_descenso }}</p>
+                    <p><strong>Dificultad:</strong> {{ barranco.dificultad }}</p>
+                    <p><strong>Población:</strong> {{ barranco.poblacion }}</p>
+                    <p><strong>Wikiloc:</strong> <a href="{{ barranco.wikiloc }}">{{ barranco.wikiloc }}</a></p>
+                    <p><strong>Longitud:</strong> {{ barranco.longitud }} metros</p>
+                    <p><strong>Altitud Máxima:</strong> {{ barranco.altitud_max }} metros</p>
+                    <p><strong>Altitud Mínima:</strong> {{ barranco.altitud_min }} metros</p>
+                    <p><strong>Diferencia:</strong> {{ barranco.diferencia }} metros</p>
+                    <p><strong>Rápeles:</strong> {{ barranco.rapeles }}</p>
+                    <p><strong>Equipamiento:</strong> {{ barranco.equipamiento }}</p>
+                    <p><strong>Longitud Máxima de Rápel:</strong> {{ barranco.longitud_max }} metros</p>
+                    <p><strong>Cartografía:</strong> {{ barranco.cartografia }}</p>
+                    <p><strong>Tiempo de Recorrido:</strong> {{ barranco.tiempo_recorrido }}</p>
+                    <p><strong>Aproximación:</strong> {{ barranco.aproximacion }}</p>
+                    <p><strong>Recorrido:</strong> {{ barranco.recorrido }}</p>
+                    <p><strong>Retorno:</strong> {{ barranco.retorno }}</p>
+                    <p><strong>Topografía:</strong> <a href="{{ barranco.topografia_imagen }}">Ver Imagen</a></p>
+                    <p><strong>Información del Descenso:</strong> {{ barranco.descenso_info }}</p>
+                    <p><strong>Meteorología:</strong> {{ barranco.meteorologia }}</p>
+                    <p><strong>Caudal:</strong> {{ barranco.caudal }}</p>
+                    <p><strong>Río:</strong> {{ barranco.rio }}</p>
+                    <p><strong>Hilo del Foro:</strong> <a href="{{ barranco.hilo_foro }}">Ver Foro</a></p>
+                    <p><strong>Punto de Control de Caudal:</strong> {{ barranco.punto_control_caudal }}</p>
+                    <p><strong>Información Adicional:</strong> {{ barranco.informacion_adicional }}</p>
+                    <p><strong>Video de YouTube:</strong> <a href="{{ barranco.video_youtube }}">Ver Video</a></p>
+                    <p><strong>Mapa Real de Acceso:</strong> <a href="{{ barranco.acceso_mapa_real }}">Ver Mapa</a></p>
+                    <p><strong>Información del Acceso:</strong> {{ barranco.informacion_acceso }}</p>
+                    <p><strong>Imagen del Mapa de Acceso:</strong> <a href="{{ barranco.imagen_mapa_acceso }}">Ver Imagen</a></p>
+                    <p><strong>Imagen de Aproximación:</strong> <a href="{{ barranco.aproximacion_imagen_mapa }}">Ver Imagen</a></p>
+                    <p><strong>Imagen del Descenso:</strong> <a href="{{ barranco.descenso_imagen_mapa }}">Ver Imagen</a></p>
+                    <p><strong>Imagen del Retorno:</strong> <a href="{{ barranco.retorno_imagen_mapa }}">Ver Imagen</a></p>
+                    <p><strong>Escapes:</strong> {{ barranco.escapes }}</p>
+                    <p><strong>Combinación de Barrancos:</strong> {{ barranco.combinacion_barrancos }}</p>
+                    <p><strong>Geomorfología e Hidrología:</strong> {{ barranco.geomorfologia_hidrologia }}</p>
+                    <p><strong>Observaciones:</strong> {{ barranco.observaciones }}</p>
+                    <p><strong>Historia:</strong> {{ barranco.historia }}</p>
+                </li>
+            {% else %}
+                <li>No hay barrancos disponibles.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
