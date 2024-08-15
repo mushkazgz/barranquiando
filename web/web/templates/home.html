@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Barranquiando</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Barranquiando</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/routes">Routes</a> |
+        <a href="/contact">Contact</a>
+    </nav>
+    <div class="container">
+        <h2>Welcome to Barranquiando!</h2>
+        <p>Discover the best canyoning spots in the Pyrenees.</p>
+
+        <h2>Barrancos en el Pirineo</h2>
+        <ul>
+            <li><a href="/barrancos/gorgas-de-fuentes-callejas">Gorgas de Fuentes Callejas</a></li>
+            <li><a href="/barrancos/barranco-de-sierra-helada">Barranco de Sierra Helada</a></li>
+            <li><a href="/barrancos/barranco-de-orbisa">Barranco de Orbisa</a></li>
+        </ul>
+    </div>
+    <footer>
+        <p>&copy; 2024 Barranquiando. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
